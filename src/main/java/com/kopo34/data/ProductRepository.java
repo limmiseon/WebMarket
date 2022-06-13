@@ -59,4 +59,14 @@ public class ProductRepository {
 	public List<Product> getAllProducts() {
 		return products;
 	}
+	
+	public Product getProductById(String id) {
+		// p.173 참고
+		// List -> Stream (데이터의 흐름) 리스트는 그냥 데이트가 있는거고 스트림은 데이터를 흘려 보냄
+		// filter에 if문 조건을 쓴다.
+		return products.stream()
+						.filter((product) -> product.getId().equals(id)) // 조건에 맞는 애들 거르기
+						.findFirst() // 첫번째거
+						.get(); // 얻기
+	}
 }

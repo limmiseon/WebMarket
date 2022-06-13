@@ -12,13 +12,7 @@
 </head>
 <body>
   <!-- nav>.container>.navbar-header>a.navbar-brand -->
-  <nav class="navbar navbar-expand navbar-dark bg-dark">
-    <div class="container">
-      <div class="navbar-header">
-        <a href="./welcome.jsp" class="navbar-brand">Home</a>
-      </div>
-    </div>
-  </nav>
+  <jsp:include page="menu.jsp"></jsp:include>
 
   <!-- Jumbotron 대체 -->
   <div class="p-5 bg-primary text-white">
@@ -39,8 +33,7 @@
       현재 접속 시각: <%= format.format(now) %>
     </div>
   </div>
-  <footer class="container">
-    <p>&copy; WebMarket</p>
-  </footer>
+  <jsp:include page="footer.jsp"></jsp:include>
+  
 </body>
 </html>

@@ -26,6 +26,13 @@
   <div class="container">
     <div class="row" align="center">
     	<%
+    	// 오브젝트를 리턴하기 때문에 맞는 타입으로 캐스팅해주면 됨. 오브젝트는 모든 타입으로 캐스팅이 가능하다.
+    	// String name = (String) session.getAttribute("name");
+    	// int age = (int) session.getAttribute("age");
+    	
+    	out.print(session.getAttribute("foods"));
+    	
+    	// 싱글턴 패턴
       ProductRepository repository = ProductRepository.getInstance();
     	List<Product> products = repository.getAllProducts();
     	for (int i = 0; i < products.size(); i++) {
@@ -45,7 +52,7 @@
 
 	<%
 	// ProductRepository repository = new ProductRepository(); import 안하고 이렇게 해도 됨
-	out.print(products);
+	// out.print(products);
 	%>
 	<jsp:include page="footer.jsp"></jsp:include>
 </body>

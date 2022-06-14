@@ -1,3 +1,5 @@
+<%@page import="java.util.List"%>
+<%@page import="java.util.ArrayList"%>
 <%@ page import="java.text.SimpleDateFormat"%>
 <%@ page import="java.util.Date"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -31,6 +33,19 @@
       SimpleDateFormat format = new SimpleDateFormat("HH:mm:ss a");
       %>
       현재 접속 시각: <%= format.format(now) %>
+      <%
+   		// 세션 저장
+      List<String> foods = new ArrayList<>();
+      foods.add("백반");
+      foods.add("치킨");
+      foods.add("짜장면");
+	
+      session.setAttribute("foods", foods);
+      // session.setAttribute("name", "임미선");
+      // session.setAttribute("age", 28);
+      // 세션 유효 시간 설정. 5초
+      session.setMaxInactiveInterval(5);
+      %>
     </div>
   </div>
   <jsp:include page="footer.jsp"></jsp:include>

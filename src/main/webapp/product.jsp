@@ -4,7 +4,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<jsp:useBean id="repository" class="com.kopo34.data.ProductRepository" scope="session"></jsp:useBean>
+<%-- <jsp:useBean id="repository" class="com.kopo34.data.ProductRepository" scope="session"></jsp:useBean> --%>
 <html>
 <head>
 <meta charset="UTF-8">
@@ -22,6 +22,7 @@
   </div>
   
   <%
+  ProductRepository repository = ProductRepository.getInstance();
   String id = request.getParameter("id");
   Product product = repository.getProductById(id);
   %>

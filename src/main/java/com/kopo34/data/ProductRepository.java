@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.kopo34.domain.model.Product;
-
+// 기능 담당. 상품에 대한 모든 기능을 담당한다.
 public class ProductRepository {
 //	다형성
 //	public static void main(String[] args) {
@@ -29,7 +29,19 @@ public class ProductRepository {
 	
 	private List<Product> products = new ArrayList<>();
 	
-	public ProductRepository() {
+//	싱글턴 패턴 (하나의 인스턴스만 갖게 하는 패턴)
+//	1. static 인스턴스 준비
+//	2. static 메서드로 인스턴스 리턴(getInstace() 이름을 주로 씀)
+//	3. 생성자 막기
+	private static ProductRepository instance = new ProductRepository();
+	
+	public static ProductRepository getInstance() {
+		return instance;
+	}
+	
+	// 생성자를 private로 막고 getInstance 함수로만 객체를 생성 가능
+	// 자바빈즈와 함께 쓰려면 기본 생성자를 public으로 해줘야 함. 생성자가 막혀있으면 자바빈즈의 룰에 어긋나서 오류가 난다.
+	private ProductRepository() {
 		Product phone = new Product("P1234", "iPhone 6s", 800000);
 		phone.setDescription("4.7-inch, 1334x750 Retina HD display");
 		phone.setCategory("Smart Phone");
@@ -68,5 +80,9 @@ public class ProductRepository {
 						.filter((product) -> product.getId().equals(id)) // 조건에 맞는 애들 거르기
 						.findFirst() // 첫번째거
 						.get(); // 얻기
+	}
+	
+	public void addProduct(Product product) {
+		products.add(product);
 	}
 }

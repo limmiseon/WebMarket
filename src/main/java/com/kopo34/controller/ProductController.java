@@ -28,7 +28,7 @@ public class ProductController extends HttpServlet {
 	    	List<Product> products = repository.getAllProducts();
 	    	req.getSession().setAttribute("products", products);
 
-		} else if (command.equals("/processAddProduct.do")) {
+		} else if (command.equals("/processAddProduct.do")) { // addProduct.jsp 전달 방식이 post라서 원래는 doPost에서 해야되는데 시간 없어서 일단 여기다,,
 			// 한글 처리
 			req.setCharacterEncoding("UTF-8");
 			// POST로 넘어온 것

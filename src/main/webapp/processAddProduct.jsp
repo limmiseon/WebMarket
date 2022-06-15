@@ -3,6 +3,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
+// ProductController로 자바 코드들 넘겨줌..
 // 한글 처리
 request.setCharacterEncoding("UTF-8");
 // POST로 넘어온 것

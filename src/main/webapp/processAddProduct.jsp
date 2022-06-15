@@ -6,7 +6,7 @@
 // 한글 처리
 request.setCharacterEncoding("UTF-8");
 // POST로 넘어온 것
-String productId = request.getParameter("productID");
+String productId = request.getParameter("productId");
 String name = request.getParameter("name");
 int unitPrice = Integer.valueOf(request.getParameter("unitPrice"));
 String description = request.getParameter("description");
@@ -23,6 +23,7 @@ product.setCategory(category);
 product.setUnitsInStock(unitsInStock);
 product.setCondition(condition);
 
+repository.addProduct(product);
 //response는 응답객체로, 요청한애한테 다시 응답을 준다. (다시 돌아옴)
 response.sendRedirect("products.jsp");
 %>

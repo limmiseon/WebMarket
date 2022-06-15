@@ -4,8 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.kopo34.domain.model.Product;
+import com.kopo34.domain.repository.ProductRepository;
 // 기능 담당. 상품에 대한 모든 기능을 담당한다.
-public class ProductRepository {
+public class ProductRepositoryImpl implements ProductRepository{
 //	다형성
 //	public static void main(String[] args) {
 //		List<Product> products1 = new LinkedList<>();
@@ -33,15 +34,15 @@ public class ProductRepository {
 //	1. static 인스턴스 준비
 //	2. static 메서드로 인스턴스 리턴(getInstace() 이름을 주로 씀)
 //	3. 생성자 막기
-	private static ProductRepository instance = new ProductRepository();
+	private static ProductRepositoryImpl instance = new ProductRepositoryImpl();
 	
-	public static ProductRepository getInstance() {
+	public static ProductRepositoryImpl getInstance() {
 		return instance;
 	}
 	
 	// 생성자를 private로 막고 getInstance 함수로만 객체를 생성 가능
 	// 자바빈즈와 함께 쓰려면 기본 생성자를 public으로 해줘야 함. 생성자가 막혀있으면 자바빈즈의 룰에 어긋나서 오류가 난다.
-	private ProductRepository() {
+	private ProductRepositoryImpl() {
 		Product phone = new Product("P1234", "iPhone 6s", 800000);
 		phone.setDescription("4.7-inch, 1334x750 Retina HD display");
 		phone.setCategory("Smart Phone");
@@ -68,10 +69,12 @@ public class ProductRepository {
 		products.add(tablet);
 	}
 	
+	@Override
 	public List<Product> getAllProducts() {
 		return products;
 	}
 	
+	@Override
 	public Product getProductById(String id) {
 		// p.173 참고
 		// List -> Stream (데이터의 흐름) 리스트는 그냥 데이트가 있는거고 스트림은 데이터를 흘려 보냄
@@ -82,6 +85,7 @@ public class ProductRepository {
 						.get(); // 얻기
 	}
 	
+	@Override
 	public void addProduct(Product product) {
 		products.add(product);
 	}

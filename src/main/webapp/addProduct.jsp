@@ -1,4 +1,3 @@
-<%@page import="com.kopo34.data.ProductRepository"%>
 <%@page import="com.kopo34.domain.model.Product"%>
 <%@ page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"

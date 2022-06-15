@@ -1,5 +1,5 @@
 <%@page import="com.kopo34.domain.model.Product"%>
-<%@page import="com.kopo34.data.ProductRepository"%>
+<%@page import="com.kopo34.domain.repository.ProductRepository"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%

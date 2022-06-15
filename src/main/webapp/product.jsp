@@ -1,4 +1,4 @@
-<%@page import="com.kopo34.data.ProductRepository"%>
+<%@page import="com.kopo34.domain.repository.ProductRepository"%>
 <%@page import="com.kopo34.domain.model.Product"%>
 <%@ page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -22,10 +22,10 @@
   </div>
   
   <%
-  ProductRepository repository = ProductRepository.getInstance();
-  String id = request.getParameter("id");
-  Product product = repository.getProductById(id);
-  %>
+    ProductRepository repository = ProductRepository.getInstance();
+      String id = request.getParameter("id");
+      Product product = repository.getProductById(id);
+    %>
   
   <div class="container">
     <div class="row">

@@ -1,4 +1,4 @@
-<%@page import="com.kopo34.data.ProductRepository"%>
+<%@page import="com.kopo34.domain.repository.ProductRepository"%>
 <%@page import="com.kopo34.domain.model.Product"%>
 <%@ page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -27,16 +27,16 @@
     <div class="row" align="center">
     	<%
     	// 오브젝트를 리턴하기 때문에 맞는 타입으로 캐스팅해주면 됨. 오브젝트는 모든 타입으로 캐스팅이 가능하다.
-    	// String name = (String) session.getAttribute("name");
-    	// int age = (int) session.getAttribute("age");
-    	
-    	out.print(session.getAttribute("foods"));
-    	
-    	// 싱글턴 패턴
-      ProductRepository repository = ProductRepository.getInstance();
-    	List<Product> products = repository.getAllProducts();
-    	for (int i = 0; i < products.size(); i++) {
-    		Product product = products.get(i);
+    	    	// String name = (String) session.getAttribute("name");
+    	    	// int age = (int) session.getAttribute("age");
+    	    	
+    	    	out.print(session.getAttribute("foods"));
+    	    	
+    	    	// 싱글턴 패턴
+    	      ProductRepository repository = ProductRepository.getInstance();
+    	    	List<Product> products = repository.getAllProducts();
+    	    	for (int i = 0; i < products.size(); i++) {
+    	    		Product product = products.get(i);
     	%>
       <div class="col-md-4">
         <h3><%= product.getName() %></h3>

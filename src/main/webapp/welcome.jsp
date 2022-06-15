@@ -8,7 +8,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>welcome</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
@@ -35,16 +35,16 @@
       현재 접속 시각: <%= format.format(now) %>
       <%
    		// 세션 저장
-      List<String> foods = new ArrayList<>();
-      foods.add("백반");
-      foods.add("치킨");
-      foods.add("짜장면");
+      //List<String> foods = new ArrayList<>();
+      //foods.add("백반");
+      //foods.add("치킨");
+      //foods.add("짜장면");
 	
-      session.setAttribute("foods", foods);
-      // session.setAttribute("name", "임미선");
-      // session.setAttribute("age", 28);
-      // 세션 유효 시간 설정. 5초
-      session.setMaxInactiveInterval(5);
+      //session.setAttribute("foods", foods);
+      // // session.setAttribute("name", "임미선");
+      // // session.setAttribute("age", 28);
+      // // 세션 유효 시간 설정. 5초
+      //session.setMaxInactiveInterval(5);
       %>
     </div>
   </div>

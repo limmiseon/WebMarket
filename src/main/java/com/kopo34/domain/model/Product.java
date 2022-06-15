@@ -39,7 +39,6 @@ public class Product {
 		this.id = id;
 		this.name = name;
 		this.unitPrice = unitPrice;
-		System.out.println(new String("name") == new String("name"));
 	}
 
 	public String getId() {

@@ -1,6 +1,5 @@
 package com.kopo34.data;
 
-import java.util.Collections;
 import java.util.List;
 
 import com.kopo34.data.dao.ProductDao;
@@ -32,6 +31,4 @@ public class ProductRepositoryDbImple implements ProductRepository {
 		// TODO Auto-generated method stub
 		
 	}
-	
-
 }

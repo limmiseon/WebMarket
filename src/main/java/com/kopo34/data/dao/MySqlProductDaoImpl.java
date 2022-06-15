@@ -29,8 +29,8 @@ public class MySqlProductDaoImpl implements ProductDao {
 		// Connection 객체 생성. try () 괄호 안에 쓰면 close 안해도 알아서 닫아줌
 		String sql = "SELECT * FROM product";
 		try (Connection conn = DriverManager.getConnection("jdbc:mysql://192.168.23.93:3308/kopoctc", "root", "kopo34");
-				Statement stmt = conn.createStatement()) {
-			try (ResultSet rs = stmt.executeQuery(sql)) {
+				Statement stmt = conn.createStatement();
+				ResultSet rs = stmt.executeQuery(sql)) {
 			while (rs.next()) {
 				String id = rs.getString("p_id"); // 컬럼명 또는 인덱스 번호를 넣는다. 인덱스는 1로 시작
 				String name = rs.getString("p_name");
@@ -50,10 +50,10 @@ public class MySqlProductDaoImpl implements ProductDao {
 				
 				results.add(product);
 			}
-			}
 			
 		} catch (SQLException e) {
-			throw new IllegalStateException("DB 연결 실패");
+			throw new IllegalStateException("DB 연결 실패" + e.getLocalizedMessage());
+			// e 객체가 에러 메세지를 담고 있다.
 		}
 		return results;
 	}

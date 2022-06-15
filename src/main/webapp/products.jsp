@@ -30,7 +30,7 @@
     	    	// String name = (String) session.getAttribute("name");
     	    	// int age = (int) session.getAttribute("age");
     	    	
-    	    	out.print(session.getAttribute("foods"));
+    	    	// out.print(session.getAttribute("foods"));
     	    	
     	    	// 싱글턴 패턴
     	      ProductRepository repository = ProductRepository.getInstance();
@@ -49,11 +49,6 @@
       %>
     </div>
   </div>
-
-	<%
-	// ProductRepository repository = new ProductRepository(); import 안하고 이렇게 해도 됨
-	// out.print(products);
-	%>
 	<jsp:include page="footer.jsp"></jsp:include>
 </body>
 </html>

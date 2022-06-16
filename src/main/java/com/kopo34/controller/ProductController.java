@@ -14,8 +14,10 @@ import com.kopo34.domain.repository.ProductRepository;
 
 @WebServlet(name = "ProductController", urlPatterns = {"/products.do", "/processAddProduct.do"})
 public class ProductController extends HttpServlet {
-
+	
+	// serialVersionUID 추가하는 법 : 밑에거 다 지우면 노란줄 뜸 거기서 두개 중 하나 누르면 됨!
 	private static final long serialVersionUID = -7221076946923982531L;
+
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
